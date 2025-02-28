@@ -10,15 +10,18 @@ export default function Home() {
       setError(null);
       setMessage(null);
       setIsLoading(true);
+      console.log(2);
       axios
          .get("http://localhost:3000/")
          .then((response) => {
-            setMessage(response.data.message);
+            setMessage(response.data);
             setIsLoading(false);
+            console.log(response);
          })
          .catch((error) => {
             setError(JSON.stringify(error.response?.data || error));
             setIsLoading(false);
+            console.log(error);
          });
    }, []);
 
@@ -26,8 +29,8 @@ export default function Home() {
       <div>
          Home
          {isLoading && <div>Loading...</div>}
-         <div className="text-[blue]">{message}</div>
-         <div className="text-[red]">{error}</div>
+         {message && <div className="text-blue-400">{message}</div>}
+         {error && <div className="text-red-400">{error}</div>}
       </div>
    );
 }
