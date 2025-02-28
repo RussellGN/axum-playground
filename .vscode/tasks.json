@@ -2,13 +2,13 @@
    "version": "2.0.0",
    "tasks": [
       {
-         "label": "cargo: run - backend",
-         "type": "shell",
-         "command": "cargo run",
+         "type": "cargo",
+         "command": "run",
+         "problemMatcher": ["$rustc"],
+         "label": "rust: cargo run",
          "options": {
             "cwd": "${workspaceFolder}/backend"
          },
-         "problemMatcher": [],
          "runOptions": {
             "runOn": "folderOpen"
          },
@@ -20,11 +20,10 @@
          }
       },
       {
-         "type": "npm",
-         "script": "dev",
-         "path": "frontend",
-         "problemMatcher": [],
          "label": "pnpm: dev - frontend",
+         "type": "shell",
+         "command": "pnpm --prefix frontend run dev",
+         "problemMatcher": [],
          "detail": "vite",
          "runOptions": {
             "runOn": "folderOpen"
@@ -37,9 +36,9 @@
          }
       },
       {
-         "label": "open: browser - localhost",
+         "label": "open: browser - axum docs",
          "type": "shell",
-         "command": "start http://localhost:5173/",
+         "command": "start https://docs.rs/axum/latest/axum/",
          "problemMatcher": [],
          "runOptions": {
             "runOn": "folderOpen"
@@ -50,9 +49,9 @@
          }
       },
       {
-         "label": "open: browser - axum docs",
+         "label": "open: browser - localhost",
          "type": "shell",
-         "command": "start https://docs.rs/axum/latest/axum/",
+         "command": "start http://localhost:5173/",
          "problemMatcher": [],
          "runOptions": {
             "runOn": "folderOpen"
