@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
 body {
-  @apply bg-black text-white max-w-[1200px] mx-auto p-5;
+   @apply bg-[#151d20] text-white min-h-[100.1vh] max-w-[1200px] mx-auto p-5;
+}
+button {
+   @apply transition-all active:scale-105 hover:opacity-80;
 }
