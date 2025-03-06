@@ -2,7 +2,6 @@ use axum::{
     routing::{get, post},
     Json, Router,
 };
-use serde::Serialize;
 use serde_json::json;
 
 #[tokio::main]
