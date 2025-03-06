@@ -8,7 +8,7 @@ export default function HandlersLesson() {
          <div className="mb-1">Test routes</div>
 
          <ul className="list-none">
-            {requests.handlers_requests.map((request, index) => (
+            {requests.handlersRequests.map((request, index) => (
                <li key={index}>
                   <RequestResponse request={request} />
                </li>

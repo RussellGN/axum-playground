@@ -13,8 +13,21 @@ export const axiosClient = axios.create({
    },
 });
 
+export const navLinks: NavLink[] = [
+   {
+      name: "Routers",
+      to: "/",
+      page: RouterLesson,
+   },
+   {
+      name: "Handlers",
+      to: "/handlers",
+      page: HandlersLesson,
+   },
+];
+
 export const requests = {
-   router_requests: [
+   routerRequests: [
       {
          url: "/connect/yabba/dabab/dopped",
          method: "GET",
@@ -101,18 +114,18 @@ export const requests = {
       },
    ] as Request[],
 
-   handlers_requests: [] as Request[],
+   handlersRequests: [
+      {
+         url: "/",
+         method: "GET",
+         body: "",
+         headers: {},
+      },
+      {
+         url: "/data",
+         method: "POST",
+         body: "",
+         headers: {},
+      },
+   ] as Request[],
 };
-
-export const navLinks: NavLink[] = [
-   {
-      name: "Routers",
-      to: "/",
-      page: RouterLesson,
-   },
-   {
-      name: "Handlers",
-      to: "/handlers",
-      page: HandlersLesson,
-   },
-];
