@@ -136,6 +136,7 @@ export const requests = {
    ] as Request[],
 
    extractorsRequests: [
+      { url: "/typed-header", method: "GET", body: "", headers: {} },
       { url: "/", method: "GET", body: "", headers: {} },
       {
          url: "/signup",

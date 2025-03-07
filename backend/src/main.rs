@@ -11,6 +11,7 @@ use axum::{
     routing::{get, post},
     Json, Router,
 };
+use axum_extra::{headers::UserAgent, TypedHeader};
 use dotenv::dotenv;
 use serde::{de::value, Deserialize, Serialize};
 use serde_json::json;
@@ -117,6 +118,14 @@ async fn path_and_query(
     Json::from(res)
 }
 
+async fn typed_header(user_agent: Option<TypedHeader<UserAgent>>) -> impl IntoResponse {
+    if let Some(TypedHeader(user_agent)) = user_agent {
+        format!("user agent is: {}", user_agent.to_string()).into_response()
+    } else {
+        StatusCode::BAD_REQUEST.into_response()
+    }
+}
+
 #[tokio::main]
 async fn main() {
     dotenv().ok();
@@ -131,6 +140,7 @@ async fn main() {
         .route("/matched-path", post(matched_path))
         .route("/original-uri", post(original_uri))
         .route("/combined/{id}", get(path_and_query))
+        .route("/typed-header", get(typed_header))
         .layer(CorsLayer::permissive())
         .layer(TraceLayer::new_for_http());
 
