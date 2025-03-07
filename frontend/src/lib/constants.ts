@@ -1,3 +1,4 @@
+import ExtractorsLesson from "../pages/ExtractorsLesson";
 import HandlersLesson from "../pages/HandlersLesson";
 import RouterLesson from "../pages/RouterLesson";
 import { type NavLink, Request } from "./types";
@@ -23,6 +24,11 @@ export const navLinks: NavLink[] = [
       name: "Handlers",
       to: "/handlers",
       page: HandlersLesson,
+   },
+   {
+      name: "Extractors",
+      to: "/extractors",
+      page: ExtractorsLesson,
    },
 ];
 
@@ -127,5 +133,41 @@ export const requests = {
          body: "",
          headers: {},
       },
+   ] as Request[],
+
+   extractorsRequests: [
+      { url: "/", method: "GET", body: "", headers: {} },
+      {
+         url: "/signup",
+         method: "POST",
+         body: JSON.stringify({ password: "password4", email: "someemail@email.com" }),
+         headers: {},
+      },
+      {
+         url: "/signup",
+         method: "POST",
+         body: JSON.stringify({ username: "password4", email: "someemail@email.com" }),
+         headers: {},
+      },
+      {
+         url: "/signup",
+         method: "POST",
+         body: JSON.stringify({ username: "johnny doef", password: "password4", email: "someemail@email.com" }),
+         headers: {},
+      },
+      {
+         url: "/signup",
+         method: "POST",
+         body: JSON.stringify({ username: "janine doefele", password: "passwo", email: "someemail@email.com" }),
+         headers: {},
+      },
+      { url: "/path/22", method: "POST", body: "", headers: {} },
+      { url: "/query?q=fish&match=no-match&locale=en-GB", method: "POST", body: "", headers: {} },
+      { url: "/combined/455-43-53-XC3?property_type=condo&location=Gweru&property_status=occupied", method: "GET", body: "", headers: {} },
+      { url: "/combined/455-43-53-XC3?page=1&property_status=occupied", method: "GET", body: "", headers: {} },
+      { url: "/headers", method: "POST", body: "", headers: {} },
+      { url: "/string", method: "POST", body: "hello stringified", headers: {} },
+      { url: "/matched-path", method: "POST", body: "", headers: {} },
+      { url: "/original-uri", method: "POST", body: "", headers: {} },
    ] as Request[],
 };
