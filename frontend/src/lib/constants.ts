@@ -1,6 +1,3 @@
-import ExtractorsLesson from "../pages/ExtractorsLesson";
-import HandlersLesson from "../pages/HandlersLesson";
-import RouterLesson from "../pages/RouterLesson";
 import { type NavLink, Request } from "./types";
 import axios from "axios";
 
@@ -13,24 +10,6 @@ export const axiosClient = axios.create({
       "Content-Type": "application/json",
    },
 });
-
-export const navLinks: NavLink[] = [
-   {
-      name: "Routers",
-      to: "/",
-      page: RouterLesson,
-   },
-   {
-      name: "Handlers",
-      to: "/handlers",
-      page: HandlersLesson,
-   },
-   {
-      name: "Extractors",
-      to: "/extractors",
-      page: ExtractorsLesson,
-   },
-];
 
 export const requests = {
    routerRequests: [
@@ -136,6 +115,10 @@ export const requests = {
    ] as Request[],
 
    extractorsRequests: [
+      { url: "/body-size", method: "GET", body: "", headers: {} },
+      { url: "/body-size", method: "GET", body: "1", headers: {} },
+      { url: "/body-size", method: "GET", body: '{"msg": "Ok man"}', headers: {} },
+      { url: "/os", method: "GET", body: "dcc", headers: {} },
       { url: "/typed-header", method: "GET", body: "", headers: {} },
       { url: "/", method: "GET", body: "", headers: {} },
       {
@@ -171,4 +154,42 @@ export const requests = {
       { url: "/matched-path", method: "POST", body: "", headers: {} },
       { url: "/original-uri", method: "POST", body: "", headers: {} },
    ] as Request[],
+
+   responsesRequests: [
+      {
+         url: "/plain_text",
+         method: "GET",
+         body: "",
+         headers: {},
+      },
+      {
+         url: "/json",
+         method: "GET",
+         body: "",
+         headers: {},
+      },
+   ] as Request[],
 };
+
+export const navLinks: NavLink[] = [
+   {
+      name: "Routers",
+      to: "/",
+      requests: requests.routerRequests,
+   },
+   {
+      name: "Handlers",
+      to: "/handlers",
+      requests: requests.handlersRequests,
+   },
+   {
+      name: "Extractors",
+      to: "/extractors",
+      requests: requests.extractorsRequests,
+   },
+   {
+      name: "Responses",
+      to: "/responses",
+      requests: requests.responsesRequests,
+   },
+];

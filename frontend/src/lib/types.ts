@@ -1,5 +1,3 @@
-import { Component, ReactNode } from "react";
-
 export type Request = {
    url: string;
    method: "GET" | "POST" | "PUT" | "DELETE";
@@ -11,5 +9,5 @@ export type Request = {
 export type NavLink = {
    name: string;
    to: string;
-   page: () => ReactNode;
+   requests: Request[];
 };
