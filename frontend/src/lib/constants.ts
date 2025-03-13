@@ -168,6 +168,46 @@ export const requests = {
          body: "",
          headers: {},
       },
+      {
+         url: "/",
+         method: "GET",
+         body: "",
+         headers: {},
+      },
+      {
+         url: "/headers-1",
+         method: "GET",
+         body: "",
+         headers: {},
+      },
+      {
+         url: "/headers-2",
+         method: "GET",
+         body: "",
+         headers: {},
+      },
+      {
+         url: "/bytes",
+         method: "GET",
+         body: "",
+         headers: {},
+      },
+      {
+         url: "/built-res",
+         method: "GET",
+         body: "",
+         headers: {},
+      },
+      {},
+   ] as Request[],
+
+   middlewareRequests: [
+      {
+         url: "/",
+         method: "GET",
+         body: "",
+         headers: {},
+      },
    ] as Request[],
 };
 
@@ -191,5 +231,10 @@ export const navLinks: NavLink[] = [
       name: "Responses",
       to: "/responses",
       requests: requests.responsesRequests,
+   },
+   {
+      name: "Middleware",
+      to: "/middleware",
+      requests: requests.middlewareRequests,
    },
 ];
