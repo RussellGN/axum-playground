@@ -206,6 +206,20 @@ export const requests = {
          url: "/",
          method: "GET",
          body: "",
+         headers: {
+            Authorization: "Bearer 123",
+         },
+      },
+      {
+         url: "/?q=hello&name=world",
+         method: "GET",
+         body: "12",
+         headers: {},
+      },
+      {
+         url: "/fail",
+         method: "GET",
+         body: "12",
          headers: {},
       },
    ] as Request[],
