@@ -203,6 +203,27 @@ export const requests = {
 
    middlewareRequests: [
       {
+         url: "/dashboard/home",
+         method: "GET",
+         body: "",
+         headers: {
+            Authorization: "token3",
+         },
+      },
+      {
+         url: "/dashboard/home",
+         method: "GET",
+         body: "",
+         headers: {
+            Authorization: "token3s",
+         },
+      },
+      {
+         url: "/dashboard/home",
+         method: "GET",
+         body: "",
+      },
+      {
          url: "/",
          method: "GET",
          body: "",
@@ -214,13 +235,17 @@ export const requests = {
          url: "/?q=hello&name=world",
          method: "GET",
          body: "12",
-         headers: {},
+         headers: {
+            Authorization: "Bearer 123",
+         },
       },
       {
          url: "/fail",
          method: "GET",
          body: "12",
-         headers: {},
+         headers: {
+            Authorization: "Bearer 123",
+         },
       },
    ] as Request[],
 };
