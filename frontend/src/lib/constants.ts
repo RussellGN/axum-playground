@@ -248,6 +248,43 @@ export const requests = {
          },
       },
    ] as Request[],
+
+   stateRequests: [
+      {
+         url: "/",
+         method: "GET",
+         body: "",
+         headers: {},
+      },
+      {
+         url: "/time",
+         method: "GET",
+         body: "",
+         headers: {},
+      },
+      {
+         url: "/time",
+         method: "GET",
+         body: "",
+         headers: {},
+      },
+      {
+         url: "/set",
+         method: "GET",
+         body: "",
+         headers: {
+            Authorization: "Bearer 123",
+         },
+      },
+      {
+         url: "/get",
+         method: "GET",
+         body: "",
+         headers: {
+            Authorization: "Bearer 123",
+         },
+      },
+   ] as Request[],
 };
 
 export const navLinks: NavLink[] = [
@@ -275,5 +312,10 @@ export const navLinks: NavLink[] = [
       name: "Middleware",
       to: "/middleware",
       requests: requests.middlewareRequests,
+   },
+   {
+      name: "State",
+      to: "/state",
+      requests: requests.stateRequests,
    },
 ];
